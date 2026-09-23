@@ -25,22 +25,22 @@ const SERVICES_DATA: ServiceInfo[] = [
     bgLight: "#E8F7EE",
   },
   {
-    id: "delivery",
-    title: "Pickup & Delivery",
-    category: "Express Logistics",
-    tagline: "Point-to-point courier service across your entire city.",
-    desc: "Convenient movement of parcels, documents, and retail items from one location to another with live GPS map tracking.",
-    price: "From ₹49 / trip",
-    turnaround: "Under 45 Mins",
+    id: "bag-leather",
+    title: "Bag & Leather Cleaning",
+    category: "Specialized Fabric & Leather",
+    tagline: "Professional deep restoration for luxury handbags, jackets & suede.",
+    desc: "Conditioning, stain extraction, deodorization, zipper care, and moisture-seal finish for leather jackets and luxury designer bags.",
+    price: "From ₹299 / piece",
+    turnaround: "48-72 Hours",
     features: [
-      "Instant courier dispatch & direct transit",
-      "Real-time GPS parcel live tracking",
-      "Photo proof of pickup & delivery",
-      "Fragile item & temperature-safe handling",
-      "Insured protection up to ₹5,000 included",
+      "Pure leather & suede deep stain extraction",
+      "Wax buffing & color tone rejuvenation",
+      "Handbag interior lining deep sanitization",
+      "Hardware polish & zipper conditioning",
+      "Moisture-seal & anti-fungal barrier coating",
     ],
-    accentColor: "#2563EB",
-    bgLight: "#EFF6FF",
+    accentColor: "#92400E",
+    bgLight: "#FEF3C7",
   },
   {
     id: "business",
@@ -231,6 +231,17 @@ export function BookingModal({
                   Confirm Booking →
                 </button>
               </div>
+
+              <p className="text-[11px] text-gray-500 text-center mt-3 leading-relaxed">
+                By creating an account, you acknowledge that you have read and understood our{" "}
+                <a href="#privacy" onClick={onClose} className="text-emerald-700 font-bold underline">
+                  Privacy Policy
+                </a>{" "}
+                and agree to the applicable{" "}
+                <a href="#terms" onClick={onClose} className="text-emerald-700 font-bold underline">
+                  Terms & Conditions
+                </a>.
+              </p>
             </form>
           </div>
         ) : (
@@ -344,11 +355,10 @@ export function PartnerModal({
                   onChange={(e) => setCategory(e.target.value)}
                   className="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-emerald-600 bg-white"
                 >
-                  <option>Franchise Partner (₹15 Lakhs Express Hub)</option>
-                  <option>Franchise Partner (₹25 Lakhs Master Processing Hub)</option>
-                  <option>Commercial Laundromat / Dry Cleaner Partner</option>
-                  <option>Courier & Independent Delivery Fleet Partner</option>
-                  <option>Local Specialty Repair & Artisan Partner</option>
+                  <option>Commercial Laundromat / Dry Cleaner Store Partner</option>
+                  <option>Independent Delivery Captain / Fleet Partner</option>
+                  <option>Shoe Spa & Leather Care Partner</option>
+                  <option>Commercial Bulk Linen Partner</option>
                   <option>Corporate Retail / Enterprise Logistics</option>
                 </select>
               </div>
@@ -404,6 +414,13 @@ export function PartnerModal({
                 >
                   Submit Partner Application →
                 </button>
+                <p className="text-[11px] text-gray-500 text-center mt-2.5">
+                  Your information will be used to respond to your request. See our{" "}
+                  <a href="#privacy" onClick={onClose} className="text-emerald-700 font-bold underline">
+                    Privacy Policy
+                  </a>{" "}
+                  for more information.
+                </p>
               </div>
             </form>
           </div>
@@ -441,8 +458,8 @@ export function ContactModal({
   onSuccess?: (msg?: string) => void;
 }) {
   const [inquiryType, setInquiryType] = useState<
-    "franchise" | "customer_help" | "partner" | "captain" | "corporate" | "general"
-  >("franchise");
+    "partner" | "customer_help" | "captain" | "corporate" | "general"
+  >("partner");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -455,12 +472,11 @@ export function ContactModal({
   if (!isOpen) return null;
 
   const INQUIRY_TYPES = [
-    { id: "franchise", label: "🏢 Franchise (₹15L / ₹25L)", desc: "Open a QuickPress Express or Master Processing Hub" },
-    { id: "customer_help", label: "🧺 Customer & Order Help", desc: "Order tracking, pickup rescheduling or fabric care inquiry" },
-    { id: "partner", label: "🏪 Partner Facility Onboarding", desc: "Monetize your existing laundromat or dry cleaning plant" },
-    { id: "captain", label: "🛵 Captain / Rider Fleet", desc: "Join as a delivery captain or fleet rider partner" },
-    { id: "corporate", label: "💼 B2B & Hotel Logistics", desc: "Bulk laundry contracts for hotels, salons & corporate staff" },
-    { id: "general", label: "💬 General & Media", desc: "General queries, feedback, or management consultation" },
+    { id: "partner", label: "Partner Store Onboarding", desc: "List your laundry, dry cleaner store or ironing shop" },
+    { id: "captain", label: "Captain / Rider Fleet", desc: "Join as a delivery captain or fleet logistics partner" },
+    { id: "customer_help", label: "Customer & Order Help", desc: "Order tracking, pickup rescheduling or fabric care inquiry" },
+    { id: "corporate", label: "B2B & Hotel Logistics", desc: "Bulk laundry contracts for hotels, salons & corporate staff" },
+    { id: "general", label: "General & Media", desc: "General queries, feedback, or business consultation" },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -522,14 +538,14 @@ export function ContactModal({
                       onClick={() => setInquiryType(t.id as any)}
                       className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
                         isSelected
-                          ? "bg-emerald-900 text-white border-emerald-950 shadow-md ring-2 ring-emerald-500/20"
+                          ? "bg-white text-emerald-950 border-2 border-emerald-600 shadow-md ring-2 ring-emerald-500/20"
                           : "bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100"
                       }`}
                     >
-                      <span className={`text-xs font-black block ${isSelected ? "text-yellow-300" : "text-gray-900"}`}>
+                      <span className={`text-xs font-black block ${isSelected ? "text-emerald-900" : "text-gray-900"}`}>
                         {t.label}
                       </span>
-                      <span className={`text-[10px] mt-1 leading-tight block ${isSelected ? "text-emerald-100" : "text-gray-500"}`}>
+                      <span className={`text-[10px] mt-1 leading-tight block ${isSelected ? "text-emerald-700" : "text-gray-500"}`}>
                         {t.desc}
                       </span>
                     </button>
@@ -601,32 +617,33 @@ export function ContactModal({
               </div>
 
               {/* Dynamic Field Based on Selected Category */}
-              {inquiryType === "franchise" && (
-                <div className="p-3.5 bg-yellow-50/70 rounded-2xl border border-yellow-200 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {inquiryType === "partner" && (
+                <div className="p-3.5 bg-emerald-50/70 rounded-2xl border border-emerald-200 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[11px] font-bold text-yellow-950 uppercase mb-1">
-                      Preferred Franchise Model
+                    <label className="block text-[11px] font-bold text-emerald-950 uppercase mb-1">
+                      Business Facility Type
                     </label>
                     <select
                       value={details}
                       onChange={(e) => setDetails(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border border-yellow-300 text-xs font-bold text-gray-900 bg-white focus:outline-none"
+                      className="w-full px-3 py-2 rounded-xl border border-emerald-300 text-xs font-bold text-gray-900 bg-white focus:outline-none"
                     >
-                      <option value="₹15 Lakhs Express Hub">₹15 Lakhs Express Collection Hub (250–450 sq.ft)</option>
-                      <option value="₹25 Lakhs Master Processing Hub">₹25 Lakhs Master Processing Facility (600–1200 sq.ft)</option>
-                      <option value="Multiple Territory Lock">Multi-City / Master Territory</option>
+                      <option value="Laundromat / Wash & Fold Store">Laundromat / Wash & Fold Store</option>
+                      <option value="Dry Cleaner & Steam Press Plant">Dry Cleaner & Steam Press Facility</option>
+                      <option value="Shoe & Leather Care Spa">Shoe & Leather Care Spa</option>
+                      <option value="Independent Logistics Fleet">Independent Logistics Fleet</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-[11px] font-bold text-yellow-950 uppercase mb-1">
-                      Target Sector / Locality Pincode
+                    <label className="block text-[11px] font-bold text-emerald-950 uppercase mb-1">
+                      Target Noida Sector / Pincode
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. Sector 90 Noida (201305)"
+                      placeholder="e.g. Sector 62 / 75 Noida (201301)"
                       value={pincode}
                       onChange={(e) => setPincode(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border border-yellow-300 text-xs text-gray-900 bg-white focus:outline-none"
+                      className="w-full px-3 py-2 rounded-xl border border-emerald-300 text-xs text-gray-900 bg-white focus:outline-none"
                     />
                   </div>
                 </div>
@@ -692,8 +709,15 @@ export function ContactModal({
                   className="w-full py-4 rounded-full font-black text-white text-sm shadow-xl hover:scale-[1.01] transition-all cursor-pointer flex items-center justify-center gap-2"
                   style={{ background: GREEN }}
                 >
-                  <span>Submit {inquiryType === "franchise" ? "Franchise Inquiry" : "Inquiry"} →</span>
+                  <span>Submit Inquiry →</span>
                 </button>
+                <p className="text-[11px] text-gray-500 text-center mt-2.5">
+                  Your information will be used to respond to your request. See our{" "}
+                  <a href="#privacy" onClick={onClose} className="text-emerald-700 font-bold underline">
+                    Privacy Policy
+                  </a>{" "}
+                  for more information.
+                </p>
               </div>
             </form>
           </div>
@@ -833,6 +857,13 @@ export function JobApplyModal({
                 >
                   Submit Application →
                 </button>
+                <p className="text-[11px] text-gray-500 text-center mt-2.5">
+                  Your information will be used to process your application. See our{" "}
+                  <a href="#privacy" onClick={onClose} className="text-emerald-700 font-bold underline">
+                    Privacy Policy
+                  </a>{" "}
+                  for more information.
+                </p>
               </div>
             </form>
           </div>
@@ -916,14 +947,14 @@ export function DownloadAppModal({
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => onShowToast("Redirecting to Apple App Store...")}
-            className="flex items-center gap-3.5 p-4 rounded-2xl bg-gray-950 text-white hover:bg-gray-800 transition-all shadow-md hover:scale-[1.02] cursor-pointer group"
+            className="flex items-center gap-3.5 p-4 rounded-2xl bg-white text-gray-950 border-2 border-gray-200 hover:border-emerald-600 transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-pointer group"
           >
-            <IconApple className="w-8 h-8 text-white shrink-0 group-hover:scale-110 transition-transform" />
+            <IconApple className="w-8 h-8 text-gray-950 shrink-0 group-hover:scale-110 transition-transform" />
             <div className="text-left">
-              <span className="text-[10px] uppercase font-semibold text-gray-400 block leading-tight">
+              <span className="text-[10px] uppercase font-semibold text-gray-500 block leading-tight">
                 Download on the
               </span>
-              <span className="text-sm font-black text-white block">
+              <span className="text-sm font-black text-gray-950 block">
                 Apple App Store
               </span>
             </div>
@@ -935,14 +966,14 @@ export function DownloadAppModal({
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => onShowToast("Redirecting to Google Play Store...")}
-            className="flex items-center gap-3.5 p-4 rounded-2xl bg-gray-950 text-white hover:bg-gray-800 transition-all shadow-md hover:scale-[1.02] cursor-pointer group"
+            className="flex items-center gap-3.5 p-4 rounded-2xl bg-white text-gray-950 border-2 border-gray-200 hover:border-emerald-600 transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-pointer group"
           >
-            <IconGooglePlay className="w-8 h-8 text-emerald-400 shrink-0 group-hover:scale-110 transition-transform" />
+            <IconGooglePlay className="w-8 h-8 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" />
             <div className="text-left">
-              <span className="text-[10px] uppercase font-semibold text-gray-400 block leading-tight">
+              <span className="text-[10px] uppercase font-semibold text-gray-500 block leading-tight">
                 GET IT ON
               </span>
-              <span className="text-sm font-black text-white block">
+              <span className="text-sm font-black text-gray-950 block">
                 Google Play Store
               </span>
             </div>
@@ -950,8 +981,8 @@ export function DownloadAppModal({
         </div>
 
         {/* QR Code & SMS Link Box */}
-        <div className="bg-emerald-950 text-white rounded-2xl p-6 border border-emerald-800/80 grid sm:grid-cols-12 gap-6 items-center mb-6">
-          <div className="sm:col-span-4 flex flex-col items-center justify-center p-3 bg-white rounded-xl shadow-md text-center">
+        <div className="bg-slate-50 text-gray-950 rounded-2xl p-6 border-2 border-emerald-100 grid sm:grid-cols-12 gap-6 items-center mb-6">
+          <div className="sm:col-span-4 flex flex-col items-center justify-center p-3 bg-white rounded-xl shadow-xs border border-gray-200 text-center">
             {/* SVG Visual QR Code */}
             <svg className="w-24 h-24 text-gray-950" viewBox="0 0 100 100" fill="currentColor">
               {/* Corner 1 */}
@@ -983,7 +1014,7 @@ export function DownloadAppModal({
           </div>
 
           <div className="sm:col-span-8 space-y-3">
-            <h4 className="font-bold text-white text-sm">
+            <h4 className="font-bold text-gray-950 text-sm">
               Scan QR code to install or get direct SMS link
             </h4>
             <form onSubmit={handleSendLink} className="flex gap-2">
@@ -992,11 +1023,11 @@ export function DownloadAppModal({
                 placeholder="+91 98765 43210"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                className="flex-1 px-3.5 py-2.5 rounded-xl bg-white/10 border border-emerald-700 text-white placeholder:text-emerald-300/50 text-xs focus:outline-none focus:border-emerald-400"
+                className="flex-1 px-3.5 py-2.5 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder:text-gray-400 text-xs focus:outline-none focus:border-emerald-600"
               />
               <button
                 type="submit"
-                className="px-4 py-2.5 rounded-xl bg-emerald-400 text-gray-950 font-black text-xs hover:bg-emerald-300 transition-all cursor-pointer shrink-0"
+                className="px-4 py-2.5 rounded-xl bg-emerald-700 text-white font-black text-xs hover:bg-emerald-800 transition-all cursor-pointer shrink-0"
               >
                 {linkSent ? "Link Sent ✓" : "Send Link"}
               </button>

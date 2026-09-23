@@ -4,7 +4,10 @@ export type PageType =
   | "services"
   | "how-it-works"
   | "partners"
-  | "ecosystem";
+  | "ecosystem"
+  | "contact"
+  | "privacy"
+  | "terms";
 
 export type ModalType =
   | "booking"

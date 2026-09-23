@@ -543,196 +543,10 @@ export function HomePage({
         </div>
       </section>
 
-      {/* ─── Services Showcase Teaser ─────────────────────────────────────────── */}
-      <section className="py-20 sm:py-28 bg-gray-50/70 border-t border-gray-200/70">
+      {/* ─── Interactive Order Processing Lifecycle Diagram ───────────────────── */}
+      <section className="py-16 sm:py-24 bg-gray-50/70 border-t border-gray-200/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-900 text-xs font-black uppercase tracking-wider self-start">
-              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-live-dot" />
-              <span>Our Core Services</span>
-            </div>
-            <button
-              onClick={() => onNavigate("services")}
-              className="px-7 py-3 rounded-full font-black text-white text-xs sm:text-sm shadow-md hover:scale-105 transition-all self-start sm:self-auto cursor-pointer flex items-center gap-2"
-              style={{ background: GREEN }}
-            >
-              <span>Explore All Services & Book</span>
-              <IconArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                id: "laundry",
-                title: "Laundry & Dry Cleaning",
-                tagline: "Eco-wash, steam iron & luxury fabric care.",
-                desc: "Everyday wash & fold, executive shirt steam press, Banarasi silk sarees, suits and heavy winter quilts.",
-                icon: IconLaundry,
-                color: GREEN,
-                bg: "#E8F7EE",
-                speedBadge: "24-48 Hours Return",
-                availability: "Doorstep Pickup & Delivery",
-                action: "Book on App",
-                isModal: true,
-                tags: ["👔 Formal Shirts", "👗 Silk Sarees", "🧥 Suits & Blazers", "🛏️ Heavy Quilts"],
-                highlights: ["Italian Steam Former Finish", "Hypoallergenic Eco-Wash", "Barcode Garment Tagging"],
-              },
-              {
-                id: "delivery",
-                title: "Express Courier & Parcels",
-                tagline: "Direct point-to-point intra-city courier.",
-                desc: "Urgent package dispatch, forgotten keys, legal documents, and retail handover with live GPS map tracking.",
-                icon: IconBox,
-                color: "#2563EB",
-                bg: "#EFF6FF",
-                speedBadge: "Under 45 Mins",
-                availability: "Live GPS Map Tracking",
-                action: "Book on App",
-                isModal: true,
-                tags: ["🔑 Keys & Passports", "📦 Urgent Parcels", "📱 Gadgets", "🛍️ Local Deliveries"],
-                highlights: ["Sub-12 Min Captain Match", "Live Route GPS Countdown", "Photo Proof of Delivery"],
-              },
-              {
-                id: "franchise",
-                title: "Franchise Hubs (₹15L / ₹25L)",
-                tagline: "High-ROI turnkey business model.",
-                desc: "Own a QuickPress Express Hub (₹15L) or Master Processing Facility (₹25L) with automated app demand.",
-                icon: IconHandshake,
-                color: "#D97706",
-                bg: "#FEF3C7",
-                speedBadge: "9-14 Months Payback",
-                availability: "Exclusive Pincode Lock",
-                action: "Explore Franchise",
-                pageTarget: "partners",
-                tags: ["🏢 ₹15L Express Hub", "🏭 ₹25L Master Plant", "📊 High Net Margin", "🔒 Territory Lock"],
-                highlights: ["100% App-Driven Demand", "Turnkey Cloud POS Hardware", "Weekly Direct Bank Payouts"],
-              },
-              {
-                id: "business",
-                title: "Enterprise & B2B Logistics",
-                tagline: "Boutique hotels, salons & corporate care.",
-                desc: "Daily scheduled batch fulfillment, multi-branch invoicing, and dedicated delivery fleet for enterprises.",
-                icon: IconBriefcase,
-                color: "#7C3AED",
-                bg: "#F5F3FF",
-                speedBadge: "Dedicated SLA",
-                availability: "Corporate Webhook API",
-                action: "Partner With Us",
-                pageTarget: "partners",
-                tags: ["🏨 Luxury Boutique Hotels", "💇 Premium Salons", "👔 Staff Uniforms", "🏥 Clinics"],
-                highlights: ["Dedicated Account Lead", "Multi-Branch Invoicing", "Instant REST & Webhook APIs"],
-              },
-            ].map((s) => (
-              <div
-                key={s.id}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/90 shadow-xs hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Top Bar */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs"
-                      style={{ background: s.bg }}
-                    >
-                      <s.icon className="w-6 h-6" style={{ color: s.color }} />
-                    </div>
-                    <span className="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">
-                      {s.speedBadge}
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg font-black text-gray-950 mb-0.5 group-hover:text-emerald-800 transition-colors">
-                    {s.title}
-                  </h3>
-                  <p className="text-[11px] font-bold mb-2.5" style={{ color: s.color }}>
-                    {s.tagline}
-                  </p>
-                  <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                    {s.desc}
-                  </p>
-
-                  {/* Visual Items Chips */}
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {s.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-bold px-2 py-0.5 rounded-lg bg-gray-50 border border-gray-200/70 text-gray-700"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Key Highlights Checklist */}
-                  <div className="space-y-1.5 pt-3 border-t border-gray-100 mb-5">
-                    {s.highlights.map((h) => (
-                      <div key={h} className="flex items-center gap-1.5 text-[11px] text-gray-600 font-medium">
-                        <span className="w-3.5 h-3.5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-[9px] font-bold shrink-0">
-                          ✓
-                        </span>
-                        <span>{h}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Card Action Footer */}
-                <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
-                  <div>
-                    <span className="text-[9px] uppercase font-bold text-gray-400 block">Network State</span>
-                    <span className="text-[10px] font-bold text-gray-800 flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-live-dot" />
-                      {s.availability}
-                    </span>
-                  </div>
-
-                  <button
-                    onClick={() => {
-                      if (s.isModal) {
-                        window.open("https://play.google.com/store/apps", "_blank");
-                        onOpenModal("download_app");
-                      } else {
-                        onNavigate("partners");
-                      }
-                    }}
-                    className="px-4 py-2 rounded-full font-black text-white text-xs shadow-xs hover:scale-105 transition-all cursor-pointer flex items-center gap-1"
-                    style={{ background: s.color }}
-                  >
-                    <span>{s.action}</span>
-                    <IconArrowRight className="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom Trust Guarantee Strip */}
-          <div className="mt-12 bg-white rounded-3xl p-6 border border-emerald-100 shadow-md grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
-            <div className="p-3 border-r border-gray-100 last:border-0">
-              <span className="text-lg">🛡️</span>
-              <h4 className="text-xs font-black text-gray-900 mt-1">₹5,000 Care Guarantee</h4>
-              <p className="text-[10px] text-gray-500 mt-0.5">Insured fabric protection on every order</p>
-            </div>
-            <div className="p-3 border-r border-gray-100 last:border-0">
-              <span className="text-lg">🌿</span>
-              <h4 className="text-xs font-black text-gray-900 mt-1">100% Eco Detergents</h4>
-              <p className="text-[10px] text-gray-500 mt-0.5">Hypoallergenic & dermatologically tested</p>
-            </div>
-            <div className="p-3 border-r border-gray-100 last:border-0">
-              <span className="text-lg">⚡</span>
-              <h4 className="text-xs font-black text-gray-900 mt-1">Sub-12 Min Arrival</h4>
-              <p className="text-[10px] text-gray-500 mt-0.5">Instant doorstep captain dispatch</p>
-            </div>
-            <div className="p-3">
-              <span className="text-lg">📱</span>
-              <h4 className="text-xs font-black text-gray-900 mt-1">Real-Time Barcode Tracking</h4>
-              <p className="text-[10px] text-gray-500 mt-0.5">Zero lost items with serialized QR tags</p>
-            </div>
-          </div>
-
-          {/* ─── Interactive Order Processing Lifecycle Diagram ───────────────────── */}
-          <div className="mt-16 bg-white rounded-3xl p-6 sm:p-10 border border-emerald-100 shadow-xl relative overflow-hidden">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-emerald-100 shadow-xl relative overflow-hidden">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-gray-100 mb-8">
               <div>
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-black uppercase tracking-wider border border-emerald-200">
@@ -768,7 +582,7 @@ export function HomePage({
                     onClick={() => setActiveProcessStage(p.step)}
                     className={`p-3.5 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between ${
                       isCurrent
-                        ? "bg-emerald-900 text-white border-emerald-950 shadow-lg scale-102 ring-2 ring-emerald-500/20"
+                        ? "bg-white text-emerald-950 border-2 border-emerald-600 shadow-md scale-102 ring-2 ring-emerald-500/20"
                         : isPassed
                         ? "bg-emerald-50/70 border-emerald-200 text-emerald-950 hover:bg-emerald-100/70"
                         : "bg-gray-50 border-gray-200 text-gray-600 hover:bg-gray-100"
@@ -778,7 +592,7 @@ export function HomePage({
                       <span
                         className={`w-6 h-6 rounded-full text-xs font-black flex items-center justify-center ${
                           isCurrent
-                            ? "bg-white text-emerald-950"
+                            ? "bg-emerald-600 text-white"
                             : isPassed
                             ? "bg-emerald-200 text-emerald-900"
                             : "bg-gray-200 text-gray-700"
@@ -789,7 +603,7 @@ export function HomePage({
                       <span
                         className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md ${
                           isCurrent
-                            ? "bg-white/20 text-emerald-200"
+                            ? "bg-emerald-100 text-emerald-800"
                             : "bg-gray-200/70 text-gray-600"
                         }`}
                       >
@@ -800,14 +614,14 @@ export function HomePage({
                     <div>
                       <span
                         className={`text-xs font-black block leading-tight ${
-                          isCurrent ? "text-white" : "text-gray-900"
+                          isCurrent ? "text-emerald-950" : "text-gray-900"
                         }`}
                       >
                         {p.title}
                       </span>
                       <span
                         className={`text-[10px] block mt-0.5 ${
-                          isCurrent ? "text-emerald-200" : "text-gray-400"
+                          isCurrent ? "text-emerald-700 font-bold" : "text-gray-400"
                         }`}
                       >
                         {p.panel}
@@ -930,26 +744,21 @@ export function HomePage({
             </div>
 
             {/* Partner Card */}
-            <div
-              className="rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col justify-between relative overflow-hidden"
-              style={{
-                background: `linear-gradient(135deg, ${GREEN_DARK} 0%, #061B0E 100%)`,
-              }}
-            >
+            <div className="bg-white rounded-3xl p-8 sm:p-12 text-gray-950 shadow-xl border-2 border-emerald-100 flex flex-col justify-between relative overflow-hidden">
               <div>
-                <span className="text-xs font-black tracking-widest text-emerald-300 uppercase bg-emerald-950/70 px-3 py-1 rounded-full border border-emerald-700/50">
+                <span className="text-xs font-black tracking-widest text-emerald-800 uppercase bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-200">
                   For Partners
                 </span>
-                <h3 className="text-3xl font-black text-white mt-4 mb-2">
+                <h3 className="text-3xl font-black text-gray-950 mt-4 mb-2">
                   Grow your business with QuickPress.
                 </h3>
-                <p className="text-emerald-100/90 text-sm sm:text-base leading-relaxed mb-6">
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
                   Join our verified network to receive guaranteed volume, dispatch software, and weekly automated payouts.
                 </p>
               </div>
               <button
                 onClick={() => onNavigate("partners")}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full font-black text-emerald-950 bg-white hover:bg-emerald-50 text-sm shadow-xl hover:scale-105 transition-all cursor-pointer inline-flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full font-black text-white bg-emerald-700 hover:bg-emerald-800 text-sm shadow-xl hover:scale-105 transition-all cursor-pointer inline-flex items-center justify-center gap-2"
               >
                 <span>Explore Partner Benefits</span>
                 <IconArrowRight className="w-4 h-4" />

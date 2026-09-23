@@ -104,22 +104,6 @@ export function AboutPage({
                     <strong>Rishab Baghel (Rishuuu)</strong> brought an execution-first entrepreneurial mindset, driving <strong>Business Development, Leadership & Actionable Execution</strong>.
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                    ✓
-                  </span>
-                  <span>
-                    <strong>Aryan Rana</strong> dove deep into software engineering, directing <strong>Technology, Development & Platform Operations</strong>.
-                  </span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                    ✓
-                  </span>
-                  <span>
-                    And as QuickPress expanded, <strong>Ananya</strong> joined as <strong>Finance Head</strong>, bringing structured <strong>Financial Planning, Fiscal Management & Responsible Growth</strong>.
-                  </span>
-                </li>
               </ul>
             </div>
           </div>
@@ -135,13 +119,22 @@ export function AboutPage({
                 <div>
                   <span className="text-gray-400 font-bold block text-[10px] uppercase">Corporate Entity</span>
                   <span className="text-gray-900 font-bold text-xs">
-                    QUICKPRESS TECHNOLOGIES & SERVICES PRIVATE LIMITED
+                    SHRI KRISHNA EVS
+                  </span>
+                  <span className="text-gray-500 font-medium text-[11px] block">
+                    Legal Name / Proprietor: SAROJ KUMARI
+                  </span>
+                </div>
+                <div>
+                  <span className="text-gray-400 font-bold block text-[10px] uppercase">Contact & Support</span>
+                  <span className="text-gray-700 font-medium text-[11px] block">
+                    Phone: +91 8279538461 | official.quickpress@gmail.com
                   </span>
                 </div>
                 <div>
                   <span className="text-gray-400 font-bold block text-[10px] uppercase">Registered Office</span>
                   <span className="text-emerald-700 font-medium text-[11px] leading-tight block">
-                    Unit 406 Tower B, Bhutani Alphathum, Sector 90, Noida 201305, Uttar Pradesh, India
+                    0, JAIL ROAD, NAGLA BENI, NEAR GADDA FACTORY, KALIYANPUR, Kasganj, Kasganj, Uttar Pradesh, 207123, India
                   </span>
                 </div>
               </div>
@@ -170,7 +163,7 @@ export function AboutPage({
           <div className="flex flex-col items-center">
             <div className="w-full max-w-xl bg-white rounded-3xl p-6 sm:p-8 border-2 border-emerald-600 shadow-xl relative text-center">
               <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[11px] font-black bg-emerald-800 text-white uppercase tracking-widest shadow-md">
-                ★ Founder & Business Owner
+                Founder & Business Owner
               </span>
 
               <div className="mt-2">
@@ -238,123 +231,45 @@ export function AboutPage({
                 </p>
               </div>
             </div>
-
-            {/* Branching SVG Connector from Tier 2 to Tier 3 (Aryan Rana & Finance Head) */}
-            <div className="w-full max-w-2xl h-14 relative my-1">
-              <svg className="w-full h-full" viewBox="0 0 600 56" fill="none" preserveAspectRatio="none">
-                {/* Vertical stem from CEO */}
-                <line x1="300" y1="0" x2="300" y2="28" stroke="#F59E0B" strokeWidth="2" />
-                {/* Horizontal split bar */}
-                <line x1="150" y1="28" x2="450" y2="28" stroke="#1A7A3C" strokeWidth="2" />
-                {/* Left drop down to Aryan Rana */}
-                <line x1="150" y1="28" x2="150" y2="56" stroke="#1A7A3C" strokeWidth="2" markerEnd="url(#arrow)" />
-                {/* Right drop down to Finance Head */}
-                <line x1="450" y1="28" x2="450" y2="56" stroke="#1A7A3C" strokeWidth="2" markerEnd="url(#arrow)" />
-                <defs>
-                  <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1A7A3C" />
-                  </marker>
-                </defs>
-              </svg>
-            </div>
-          </div>
-
-          {/* ── TIER 3: PARALLEL BRANCHES (Aryan Rana & Finance Head) ── */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-2">
-            {/* Branch 1: Aryan Rana */}
-            <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all text-center relative flex flex-col justify-between">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full inline-block mx-auto mb-3">
-                Executive Leadership
-              </span>
-
-              <div>
-                <h3 className="text-xl font-black text-gray-900">Aryan Rana</h3>
-                <p className="text-xs font-bold text-blue-700 mb-2">Managing Director</p>
-
-                <div className="p-2 bg-blue-50/70 rounded-xl border border-blue-100 text-xs font-bold text-blue-900 mb-3">
-                  Technology, Development & Operations
-                </div>
-
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Directing software development, technical product management, dispatch system engineering, and daily logistics operations.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-gray-100 mt-4 flex items-center justify-between text-xs text-blue-700 font-semibold">
-                <span className="flex items-center gap-1">
-                  <IconCpu className="w-3.5 h-3.5" />
-                  Tech & Ops Lead
-                </span>
-                <IconCheck className="w-4 h-4" />
-              </div>
-            </div>
-
-            {/* Branch 2: Finance Head (Ananya) */}
-            <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all text-center relative flex flex-col justify-between">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full inline-block mx-auto mb-3">
-                Executive Leadership
-              </span>
-
-              <div>
-                <h3 className="text-xl font-black text-gray-900">Ananya</h3>
-                <p className="text-xs font-bold text-purple-700 mb-2">Finance Head</p>
-
-                <div className="p-2 bg-purple-50/70 rounded-xl border border-purple-100 text-xs font-bold text-purple-900 mb-3">
-                  Finance, Planning & Financial Management
-                </div>
-
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Leading strategic financial management, investor relations, partner settlement accounting, and sustainable capital growth.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-gray-100 mt-4 flex items-center justify-between text-xs text-purple-700 font-semibold">
-                <span className="flex items-center gap-1">
-                  <IconBriefcase className="w-3.5 h-3.5" />
-                  Fiscal & Capital Lead
-                </span>
-                <IconCheck className="w-4 h-4" />
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* ─── Why QuickPress? ─────────────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-emerald-950 text-white rounded-3xl p-8 sm:p-14 border border-emerald-800/60 grid lg:grid-cols-12 gap-10 items-center">
+        <div className="bg-white text-gray-950 rounded-3xl p-8 sm:p-14 border border-gray-200 shadow-xl grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-700">
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
               Our Vision
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black">
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-950">
               Why QuickPress?
             </h2>
-            <p className="text-emerald-100/90 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               We saw an opportunity to build something that could make everyday services simpler, faster, and more accessible. QuickPress is our attempt to turn that vision into reality.
             </p>
-            <div className="p-4 rounded-2xl bg-[#0B2414] border border-emerald-800">
-              <p className="text-base sm:text-lg font-bold text-yellow-400">
+            <div className="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+              <p className="text-base sm:text-lg font-bold text-emerald-950">
                 "Technology should make life easier — not more complicated."
               </p>
-              <p className="text-xs text-emerald-200/80 mt-2 leading-relaxed">
+              <p className="text-xs text-emerald-900/80 mt-2 leading-relaxed">
                 From the way customers discover and order services to the way partners manage their business and teams deliver those services, we want to create a connected ecosystem that works for everyone.
               </p>
             </div>
           </div>
 
           <div className="lg:col-span-5 grid grid-cols-2 gap-3">
-            <div className="p-5 bg-emerald-900/40 rounded-2xl border border-emerald-700/60 text-center">
-              <p className="text-2xl sm:text-3xl font-black text-emerald-400">100%</p>
-              <p className="text-xs text-emerald-200 mt-1 font-semibold">Reliability Focus</p>
+            <div className="p-5 bg-slate-50 rounded-2xl border border-gray-200 text-center">
+              <p className="text-2xl sm:text-3xl font-black text-emerald-700">100%</p>
+              <p className="text-xs text-gray-600 mt-1 font-semibold">Reliability Focus</p>
             </div>
-            <div className="p-5 bg-emerald-900/40 rounded-2xl border border-emerald-700/60 text-center">
-              <p className="text-2xl sm:text-3xl font-black text-yellow-400">Unified</p>
-              <p className="text-xs text-emerald-200 mt-1 font-semibold">Service Ecosystem</p>
+            <div className="p-5 bg-slate-50 rounded-2xl border border-gray-200 text-center">
+              <p className="text-2xl sm:text-3xl font-black text-emerald-800">Unified</p>
+              <p className="text-xs text-gray-600 mt-1 font-semibold">Service Ecosystem</p>
             </div>
-            <div className="p-5 bg-emerald-900/40 rounded-2xl border border-emerald-700/60 text-center col-span-2">
-              <p className="text-xl sm:text-2xl font-black text-white">Built by Friends</p>
-              <p className="text-xs text-emerald-200 mt-0.5">Driven by ambition. Made for what comes next.</p>
+            <div className="p-5 bg-emerald-50/80 rounded-2xl border border-emerald-200 text-center col-span-2">
+              <p className="text-xl sm:text-2xl font-black text-emerald-950">Built by Friends</p>
+              <p className="text-xs text-emerald-800 mt-0.5">Driven by ambition. Made for what comes next.</p>
             </div>
           </div>
         </div>
